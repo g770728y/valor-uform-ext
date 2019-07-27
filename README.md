@@ -1,8 +1,6 @@
 # valor-uform-ext
 
-> 
-
-[![NPM](https://img.shields.io/npm/v/valor-uform-ext.svg)](https://www.npmjs.com/package/valor-uform-ext) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+`uform`的扩展组件
 
 ## Install
 
@@ -12,19 +10,7 @@ npm install --save valor-uform-ext
 
 ## Usage
 
-```tsx
-import * as React from 'react'
-
-import MyComponent from 'valor-uform-ext'
-
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
-```
+见`example`
 
 ## License
 
