@@ -1,23 +1,8 @@
-/**
- * @class ExampleComponent
- */
+import * as React from 'react';
+import { connect, registerFormField } from '@uform/antd';
+import TreeSelectInput from './TreeSelectInput';
 
-import * as React from 'react'
-
-import styles from './styles.css'
-
-export type Props = { text: string }
-
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+registerFormField(
+  'tree-select',
+  (connect() as any)((props: any) => <TreeSelectInput {...props} />)
+);
