@@ -1,6 +1,6 @@
 {
   "name": "valor-uform-ext",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "author": "g770728y",
   "license": "MIT",
@@ -21,7 +21,9 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "app-utils": "1.0.1"
+  },
   "peerDependencies": {
     "@uform/antd": "^0.3.6",
     "antd": "^3.20.7",

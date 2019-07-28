@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import 'valor-uform-ext';
-import { SchemaForm, Field, Submit } from '@uform/antd';
+import { TreeSelectInput } from 'valor-uform-ext';
+import { SchemaForm, Field, Submit, registerFormField } from '@uform/antd';
 import 'antd/dist/antd.css';
+
+registerFormField(
+  'tree-select',
+  connect()(props => <TreeSelectInput {...props} />)
+);
 
 const treeData = [
   {
