@@ -1,6 +1,6 @@
 {
   "name": "valor-uform-ext",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "author": "g770728y",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "app-utils": "1.0.1"
+    "app-utils": "^1.0.0"
   },
   "peerDependencies": {
     "@uform/antd": "^0.3.6",

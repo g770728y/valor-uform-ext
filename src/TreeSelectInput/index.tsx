@@ -11,6 +11,7 @@ import { mapTreeNode } from 'app-utils';
 */
 type Props = {
   value: any;
+  disabled?: boolean;
   onChange: (e: any) => void;
   treeData?: [];
   // 从后台获取treeData的回调
@@ -21,6 +22,7 @@ type Props = {
 
 const TreeSelectInput: React.FC<Props> = ({
   value,
+  disabled,
   onChange,
   treeData,
   getTreeData,
@@ -40,6 +42,7 @@ const TreeSelectInput: React.FC<Props> = ({
 
   return (
     <TreeSelect
+      disabled={disabled || false}
       style={{ width: 300 }}
       value={value}
       dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}

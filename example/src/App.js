@@ -45,7 +45,7 @@ export default class App extends Component {
           type="string"
           name="a"
           x-component="tree-select"
-          x-props={{ treeData }}
+          x-props={{ treeData, disabled: true }}
         />
         <Submit />
       </SchemaForm>
