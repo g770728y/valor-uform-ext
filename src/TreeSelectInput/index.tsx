@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TreeSelect } from 'antd';
-import { mapTreeNode } from 'app-utils';
+import { mapTreeNode } from 'valor-app-utils';
 
 /* treeData格式: 必须如下
 [
@@ -13,7 +13,7 @@ type Props = {
   value: any;
   disabled?: boolean;
   onChange: (e: any) => void;
-  treeData?: [];
+  treeData?: any[];
   // 从后台获取treeData的回调
   getTreeData?: () => Promise<any>;
   // 例如: 将{id:1, children, name} => {id:1, children, title, key}
