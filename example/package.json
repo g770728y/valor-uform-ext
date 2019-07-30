@@ -5,7 +5,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.2",
+    "react-promisify-modal": "^1.0.0",
     "react-scripts": "^1.1.4",
     "valor-uform-ext": "link:.."
   },

@@ -21,9 +21,13 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
+<<<<<<< HEAD
   "dependencies": {
     "valor-app-utils": "^1.0.0"
   },
+=======
+  "dependencies": {},
+>>>>>>> e8e926b0209823d609c4be05e0633ddd0dc214e3
   "peerDependencies": {
     "@uform/antd": "^0.3.6",
     "antd": "^3.20.7",
@@ -41,8 +45,10 @@
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
+    "rambda": "^2.13.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-promisify-modal": "^1.0.0",
     "react-scripts-ts": "^2.16.0",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.7",
@@ -52,7 +58,8 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "valor-app-utils": "^1.0.3"
   },
   "files": [
     "dist"
