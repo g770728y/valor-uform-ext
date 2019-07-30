@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TreeSelect } from 'antd';
-import { mapTreeNode } from 'app-utils';
+import { mapTreeNode } from 'valor-app-utils';
 
 /* treeData格式: 必须如下
 [

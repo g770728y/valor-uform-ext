@@ -22,7 +22,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "app-utils": "^1.0.0"
+    "valor-app-utils": "^1.0.0"
   },
   "peerDependencies": {
     "@uform/antd": "^0.3.6",
