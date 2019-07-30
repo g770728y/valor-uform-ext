@@ -6,3 +6,6 @@ export { AppendableSelect };
 
 import PickerDialog from './PickerDialog';
 export { PickerDialog };
+
+import PickerInput from './PickerInput';
+export { PickerInput };

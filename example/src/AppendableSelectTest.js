@@ -21,10 +21,7 @@ const onCreate = () => {
 
 const getData = () => {
   console.log('getData');
-  return Promise.resolve([
-    { id: (Math.random() * 10) | 0, label: '一' },
-    { id: (Math.random() * 10) | 0, label: '二' }
-  ]);
+  return Promise.resolve([{ id: 1, label: '一' }, { id: 2, label: '二' }]);
 };
 
 export default () => {

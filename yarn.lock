@@ -7706,6 +7706,11 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-promisify-modal@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-promisify-modal/-/react-promisify-modal-1.0.0.tgz#11d7faf63ea64543e4a545c3d8324d5081ba1a91"
+  integrity sha512-trM3BZPm5nUw0jgQqtdvDvxBQ46vvmII64EZWPI/lj3vf09aEmwPQBu2FpFRJP/c2QgSG+Yag72n4LDU/1enYA==
+
 react-scripts-ts@^2.16.0:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/react-scripts-ts/-/react-scripts-ts-2.17.0.tgz#398bae19a30c9b39b3dfe0720ebb40c60c2f6574"

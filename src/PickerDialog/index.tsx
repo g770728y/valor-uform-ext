@@ -5,7 +5,7 @@ import { ColumnProps } from 'antd/lib/table';
 import * as R from 'rambda';
 import Query from './Query';
 
-interface Props {
+export interface Props {
   // 是否多选
   multiple?: boolean;
   title?: string;

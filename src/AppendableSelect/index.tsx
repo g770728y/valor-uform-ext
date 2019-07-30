@@ -27,6 +27,9 @@ const AppendableSelect: React.FC<Props> = ({
 }) => {
   const [data, setData] = React.useState([]);
   const [dirty, setDirty] = React.useState(true);
+  console.warn(
+    '暂时没用到AppendableSelect, 所以并未真正做完. 用到时, 请补充相关逻辑'
+  );
 
   React.useEffect(() => {
     if (dirty) {
@@ -35,7 +38,6 @@ const AppendableSelect: React.FC<Props> = ({
         .then(() => setDirty(false));
     }
   }, [dirty]);
-  console.log('data', data, props.value);
 
   const onCreateClick = () => onCreate().then(() => setDirty(true));
 
