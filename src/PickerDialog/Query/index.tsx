@@ -14,8 +14,8 @@ const Query: React.FC<Props> = ({ queries, queryFields, setQueries }) => {
       defaultValue={queries || {}}
       onSubmit={(values: any) => setQueries({ ...queries, ...values })}
     >
-      {...queryFields}
-      <Submit title="查询" />
+      {...queryFields as any}
+      <Submit>查询</Submit>
     </SchemaForm>
   );
 };

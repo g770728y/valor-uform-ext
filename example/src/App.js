@@ -4,11 +4,14 @@ import AppendableSelectTest from './AppendableSelectTest';
 import { ModalProvider } from 'react-promisify-modal';
 import PickerDialogTest from './PickerDialogTest';
 import PickerInputTest from './PickerInputTest';
+import DataSelectTest from './DataSelectTest';
 
 export default () => {
   return (
     <ModalProvider>
       <div>
+        <DataSelectTest />
+        <hr />
         <PickerInputTest />
         <hr />
         <PickerDialogTest />

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as R from 'rambda';
 import { Button } from 'antd';
 import { ModalContext, ModalProvider } from 'react-promisify-modal';
-import { PickerDialog } from '..';
+import PickerDialog from '../PickerDialog';
 import { Props as PickerProps } from '../PickerDialog';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
   onChange: (entity: Identity) => void;
   disabled?: boolean;
   // 创建方法, 创建时, 应该用openModal显示一个对话框, 最后返回一个Promise
-  onCreate: () => Promise<void>;
+  onCreate?: () => Promise<any>;
   labelField?: string;
 
   picker: Partial<PickerProps>;
@@ -35,6 +35,15 @@ const PickerInput_: React.FC<Props> = ({
       (result: any) => onChange(result)
     );
   };
+
+  const onNew = () => {
+    onCreate!().then(result => {
+      if (result && result.id) {
+        onChange(result);
+      }
+    });
+  };
+
   const spacer = <div style={{ width: 10, flex: 'none' }} />;
 
   return (
@@ -51,12 +60,14 @@ const PickerInput_: React.FC<Props> = ({
         </>
       )}
       <Button onClick={onPicker} size="small" disabled={disabled}>
-        {value && !R.isEmpty(value) ? '选择...' : '重选...'}
+        {value && !R.isEmpty(value) ? '重选...' : '选择...'}
       </Button>
       {spacer}
-      <Button onClick={onCreate} size="small" disabled={disabled}>
-        新建
-      </Button>
+      {onCreate && (
+        <Button onClick={onNew} size="small" disabled={disabled}>
+          新建
+        </Button>
+      )}
     </div>
   );
 };
