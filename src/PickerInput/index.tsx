@@ -30,7 +30,6 @@ const PickerInput_: React.FC<Props> = ({
   picker
 }) => {
   const { openModal } = React.useContext(ModalContext);
-  console.log(openModal);
   const onPicker = () => {
     openModal((args: any) => <PickerDialog {...args} {...picker} />).then(
       (result: any) => onChange(result)
