@@ -74,7 +74,7 @@ const PickerDialog: React.FC<Props> = ({
 
   return (
     <Modal
-      title={title || '请选择'}
+      title={title || '双击选择'}
       visible={show}
       onOk={() => onSubmit(selection)}
       onCancel={onCancel}

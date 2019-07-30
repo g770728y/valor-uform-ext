@@ -64,6 +64,7 @@ const Tabler: React.FC<Props> = ({
 
   return (
     <Table
+      size={'small'}
       onRow={onRowClick}
       rowKey={'id'}
       columns={columns}
