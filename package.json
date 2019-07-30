@@ -21,13 +21,9 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-<<<<<<< HEAD
   "dependencies": {
     "valor-app-utils": "^1.0.0"
   },
-=======
-  "dependencies": {},
->>>>>>> e8e926b0209823d609c4be05e0633ddd0dc214e3
   "peerDependencies": {
     "@uform/antd": "^0.3.6",
     "antd": "^3.20.7",
