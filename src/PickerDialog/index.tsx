@@ -14,6 +14,7 @@ export interface Props {
   onCancel: () => void;
   columns: ColumnProps<any>[];
   data?: Identity[];
+  width?: number;
   getData?: (p: {
     pageNo: number;
     pageSize: number;
@@ -29,6 +30,7 @@ const PickerDialog: React.FC<Props> = ({
   show,
   onOk,
   onCancel,
+  width = 600,
   columns,
   data,
   getData,
@@ -74,10 +76,13 @@ const PickerDialog: React.FC<Props> = ({
 
   return (
     <Modal
+      width={width}
       title={title || '双击选择'}
       visible={show}
       onOk={() => onSubmit(selection)}
       onCancel={onCancel}
+      okText={'确定'}
+      cancelText={'取消'}
     >
       {queryFields && (
         <Query
