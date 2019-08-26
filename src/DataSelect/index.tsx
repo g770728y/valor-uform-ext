@@ -23,7 +23,6 @@ const DataSelect: React.FC<Props> = ({
   ...selectProps
 }) => {
   const [dataSource, setDataSource] = React.useState<any[]>(data || []);
-  console.log('dataSource', dataSource);
 
   React.useEffect(() => {
     if (getData) {

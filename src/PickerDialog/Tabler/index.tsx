@@ -23,7 +23,6 @@ const Tabler: React.FC<Props> = ({
   meta,
   setCurrentPage
 }) => {
-  console.log('selection', selection);
   const rowSelection: TableRowSelection<any> = {
     type: multiple ? 'checkbox' : 'radio',
     selectedRowKeys: selection.map(it => it.id),
