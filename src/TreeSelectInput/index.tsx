@@ -47,7 +47,7 @@ const TreeSelectInput: React.FC<Props> = ({
       value={value}
       dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
       treeData={tree}
-      placeholder="Please select"
+      placeholder="请选择"
       treeDefaultExpandAll
       onChange={onChange}
     />
