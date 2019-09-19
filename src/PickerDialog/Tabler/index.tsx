@@ -63,6 +63,7 @@ const Tabler: React.FC<Props> = ({
 
   return (
     <Table
+      className="pollute"
       size={'small'}
       onRow={onRowClick}
       rowKey={'id'}
