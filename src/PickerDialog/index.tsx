@@ -48,6 +48,7 @@ const PickerDialog: React.FC<Props> = ({
   defaultQueries,
   queryFields
 }) => {
+  const unmountedRef = React.useRef<boolean>(false);
   const filledRef = React.useRef<boolean>(false);
   // 手动更新
   const [_, forceUpdate] = React.useState<number>(0);
@@ -72,6 +73,12 @@ const PickerDialog: React.FC<Props> = ({
     forceUpdate(new Date().getTime());
   };
 
+  React.useEffect(() => {
+    return () => {
+      unmountedRef.current = true;
+    };
+  }, []);
+
   const { meta, dataSource, selection, queries } = modelRef.current;
   React.useEffect(() => {
     if (!filledRef.current) {
@@ -91,10 +98,12 @@ const PickerDialog: React.FC<Props> = ({
         pageSize: meta.pageSize,
         ...queries
       }).then(result => {
-        patchModel({
-          dataSource: result.entities,
-          meta: { ...meta, total: result.meta.total }
-        });
+        if (!unmountedRef.current) {
+          patchModel({
+            dataSource: result.entities,
+            meta: { ...meta, total: result.meta.total }
+          });
+        }
       });
     }
   }, [meta.pageNo, queries]);

@@ -22,11 +22,22 @@ const DataSelect: React.FC<Props> = ({
   getData,
   ...selectProps
 }) => {
+  const unmountedRef = React.useRef<boolean>(false);
   const [dataSource, setDataSource] = React.useState<any[]>(data || []);
 
   React.useEffect(() => {
+    return () => {
+      unmountedRef.current = true;
+    };
+  }, []);
+
+  React.useEffect(() => {
     if (getData) {
-      getData().then(setDataSource);
+      getData().then(data => {
+        if (!unmountedRef.current) {
+          setDataSource(data);
+        }
+      });
     }
   }, []);
 
