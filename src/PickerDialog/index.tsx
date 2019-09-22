@@ -64,7 +64,15 @@ const PickerDialog: React.FC<Props> = ({
     queries: defaultQueries || {}
   });
 
+  React.useEffect(() => {
+    return () => {
+      unmountedRef.current = true;
+    };
+  }, []);
+
   const patchModel = (_model: Partial<IModel>) => {
+    if (unmountedRef.current) return;
+
     const newModel = { ...modelRef.current, ..._model };
     modelRef.current = newModel;
     appCache.set(id || AppCache.DreamerId, newModel);
@@ -72,12 +80,6 @@ const PickerDialog: React.FC<Props> = ({
     // 手动更新
     forceUpdate(new Date().getTime());
   };
-
-  React.useEffect(() => {
-    return () => {
-      unmountedRef.current = true;
-    };
-  }, []);
 
   const { meta, dataSource, selection, queries } = modelRef.current;
   React.useEffect(() => {
