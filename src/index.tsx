@@ -9,3 +9,6 @@ export { PickerDialog };
 
 import PickerInput from './PickerInput';
 export { PickerInput };
+
+import CodeInput from './CodeInput';
+export { CodeInput };

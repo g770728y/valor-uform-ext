@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as R from 'rambda';
 import { Button } from 'antd';
 import { ModalContext, ModalProvider } from 'react-promisify-modal';
-import { PickerDialog } from '..';
-import { Props as PickerProps } from '../PickerDialog';
+import PickerDialog, { Props as PickerProps } from '../PickerDialog';
 
 interface Props {
   value: Identity;
@@ -31,7 +30,7 @@ const PickerInput_: React.FC<Props> = ({
 }) => {
   const { openModal } = React.useContext(ModalContext);
   const onPicker = () => {
-    openModal((args: any) => <PickerDialog {...args} {...picker} />).then(
+    openModal!((args: any) => <PickerDialog {...args} {...picker} />).then(
       (result: any) => onChange(result)
     );
   };

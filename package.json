@@ -1,6 +1,6 @@
 {
   "name": "valor-uform-ext",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "author": "g770728y",
   "license": "MIT",
@@ -22,16 +22,22 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "valor-app-utils": "^1.0.0"
+    "add": "^2.0.6",
+    "yarn": "^1.19.1"
   },
   "peerDependencies": {
+    "valor-app-utils": "^1.0.35",
     "@uform/antd": "^0.3.6",
     "antd": "^3.20.7",
+    "codemirror": "^5.49.2",
+    "rambdax": "^2.14.1",
     "react": "^16.8.0",
+    "react-codemirror2": "^6.0.0",
     "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
+    "@types/codemirror": "^0.0.79",
     "@types/jest": "^23.1.5",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
