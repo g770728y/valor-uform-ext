@@ -38,7 +38,8 @@ const CodeInput: React.FC<Props> = ({
       </Button>
       <style
         dangerouslySetInnerHTML={{
-          __html: '.react-codemirror2,.CodeMirror {height:100%}'
+          __html:
+            '.react-codemirror2 {height:100%;flex:0 1 auto;} .CodeMirror {height:100%;}'
         }}
       ></style>
       <Modal
@@ -54,20 +55,29 @@ const CodeInput: React.FC<Props> = ({
         width={800}
         bodyStyle={{ padding: 0, height: 600 }}
       >
-        {remark && <Alert type="warning" message={remark} />}
-        <CodeMirror
-          options={{
-            mode: mode,
-            theme: 'default',
-            lineNumbers: true,
-            autoCloseBrackets: true,
-            autoCloseTags: true
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column'
           }}
-          value={value}
-          onChange={(editor, data, value) => {
-            valueRef.current = value;
-          }}
-        />
+        >
+          {remark && <Alert type="warning" message={remark} />}
+          <CodeMirror
+            options={{
+              mode: mode,
+              theme: 'default',
+              lineNumbers: true,
+              autoCloseBrackets: true,
+              autoCloseTags: true
+            }}
+            value={value}
+            onChange={(editor, data, value) => {
+              valueRef.current = value;
+            }}
+          />
+        </div>
       </Modal>
     </>
   );
