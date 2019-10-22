@@ -23,7 +23,6 @@ const Tabler: React.FC<Props> = ({
   meta,
   setCurrentPage
 }) => {
-  console.log('selection', selection);
   const rowSelection: TableRowSelection<any> = {
     type: multiple ? 'checkbox' : 'radio',
     selectedRowKeys: selection.map(it => it.id),
@@ -64,6 +63,7 @@ const Tabler: React.FC<Props> = ({
 
   return (
     <Table
+      className="pollute"
       size={'small'}
       onRow={onRowClick}
       rowKey={'id'}

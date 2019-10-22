@@ -25,6 +25,7 @@ const AppendableSelect: React.FC<Props> = ({
   idField = 'id',
   ...props
 }) => {
+  const unmountedRef = React.useRef<boolean>(false);
   const [data, setData] = React.useState([]);
   const [dirty, setDirty] = React.useState(true);
   console.warn(
@@ -32,10 +33,19 @@ const AppendableSelect: React.FC<Props> = ({
   );
 
   React.useEffect(() => {
+    return () => {
+      unmountedRef.current = true;
+    };
+  }, []);
+
+  React.useEffect(() => {
     if (dirty) {
-      getData()
-        .then((data: any) => setData(data))
-        .then(() => setDirty(false));
+      getData().then((data: any) => {
+        if (!unmountedRef.current) {
+          setData(data);
+          setDirty(false);
+        }
+      });
     }
   }, [dirty]);
 

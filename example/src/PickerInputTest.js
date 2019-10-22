@@ -50,7 +50,6 @@ const getData = ({ pageNo, pageSize, ...params }) => {
 const queryFields = (
   <React.Fragment>
     <Field type="string" name="p1" x-props={{ placeholder: 'input p1' }} />
-    <Field type="string" name="p2" x-props={{ placeholder: 'input p2' }} />
   </React.Fragment>
 );
 const PickerInputTest = () => {

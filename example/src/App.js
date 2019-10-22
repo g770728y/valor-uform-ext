@@ -5,11 +5,15 @@ import { ModalProvider } from 'react-promisify-modal';
 import PickerDialogTest from './PickerDialogTest';
 import PickerInputTest from './PickerInputTest';
 import CodeInputTest from './CodeInput';
+import DataSelectTest from './DataSelectTest';
 
 export default () => {
   return (
     <ModalProvider>
       <div>
+        <h1>DataSelect</h1>
+        <DataSelectTest />
+        <hr />
         <h1>PickerInput</h1>
         <PickerInputTest />
         <hr />

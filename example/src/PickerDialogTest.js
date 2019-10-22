@@ -54,6 +54,7 @@ const PickerDialogPicker = () => {
     openModal(args => (
       <PickerDialog
         {...args}
+        id="id"
         title="选择一只猪猪"
         columns={columns}
         getData={getData}

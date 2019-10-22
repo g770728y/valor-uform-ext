@@ -31,13 +31,28 @@ const TreeSelectInput: React.FC<Props> = ({
   if (!treeData && !getTreeData)
     throw new Error('必须提供treeData 或 getTreeData!');
 
+  const unmountedRef = React.useRef<boolean>(false);
   const [tree, setTree] = React.useState([]);
 
   React.useEffect(() => {
+    return () => {
+      unmountedRef.current = true;
+    };
+  }, []);
+
+  React.useEffect(() => {
     const p = treeData ? Promise.resolve(treeData) : getTreeData!();
-    p.then(data =>
-      (data || []).map((node: any) => mapTreeNode(node, normalize))
-    ).then(setTree);
+    p.then((data: any) => {
+      if (unmountedRef.current) {
+        throw new Error('TreeSelectInput 已unmounted, 无法setState, 已忽略');
+      }
+      return data;
+    })
+      .then(data =>
+        (data || []).map((node: any) => mapTreeNode(node, normalize))
+      )
+      .then(setTree)
+      .catch(e => console.error(e));
   }, []);
 
   return (
@@ -47,7 +62,7 @@ const TreeSelectInput: React.FC<Props> = ({
       value={value}
       dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
       treeData={tree}
-      placeholder="Please select"
+      placeholder="请选择"
       treeDefaultExpandAll
       onChange={onChange}
     />
