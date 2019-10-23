@@ -52,6 +52,7 @@ const CodeInput: React.FC<Props> = ({
         }}
         okText="确定"
         cancelText="取消"
+        destroyOnClose={true}
         width={800}
         bodyStyle={{ padding: 0, height: 600 }}
       >
