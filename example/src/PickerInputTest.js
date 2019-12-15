@@ -1,37 +1,37 @@
-import * as React from 'react';
-import Mock from 'mockjs';
+import * as React from "react";
+import Mock from "mockjs";
 import SchemaForm, {
   Field,
   Submit,
   registerFormField,
   connect
-} from '@uform/antd';
-import { PickerInput } from 'valor-uform-ext';
+} from "@uform/antd";
+import { PickerInput } from "valor-uform-ext";
 
 registerFormField(
-  'picker-input',
+  "picker-input",
   connect()(props => <PickerInput {...props} />)
 );
 
 const columns = [
-  { title: '姓名', dataIndex: 'name', key: 'name' },
-  { title: '年龄', dataIndex: 'age', key: 'age' },
-  { title: '体重', dataIndex: 'weight', key: 'weight' }
+  { title: "姓名", dataIndex: "name", key: "name" },
+  { title: "年龄", dataIndex: "age", key: "age" },
+  { title: "体重", dataIndex: "weight", key: "weight" }
 ];
 
 const allData = Mock.mock({
-  'array|30-100': [
+  "array|30-100": [
     {
-      id: '@increment',
-      name: '@cname',
-      age: '@integer(10,100)',
-      weight: '@integer(10,100)'
+      id: "@increment",
+      name: "@cname",
+      age: "@integer(10,100)",
+      weight: "@integer(10,100)"
     }
   ]
 }).array;
 
 const getData = ({ pageNo, pageSize, ...params }) => {
-  console.log('params', params);
+  console.log("params", params);
   return Promise.resolve(allData)
     .then(result => ({
       meta: { pageNum: 1, pageSize: 10, num: result.length },
@@ -49,19 +49,25 @@ const getData = ({ pageNo, pageSize, ...params }) => {
 
 const queryFields = (
   <React.Fragment>
-    <Field type="string" name="p1" x-props={{ placeholder: 'input p1' }} />
+    <Field type="string" name="p1" x-props={{ placeholder: "input p1" }} />
   </React.Fragment>
 );
 const PickerInputTest = () => {
   return (
-    <SchemaForm value={{}} onSubmit={values => console.log('onSubmit', values)}>
+    <SchemaForm value={{}} onSubmit={values => console.log("onSubmit", values)}>
       <Field
         name="field0"
         title="字段名称"
         x-component="picker-input"
         x-props={{
-          onCreate: () => console.log('onCreate'),
-          labelField: 'name',
+          onCreate: () =>
+            Promise.resolve({ id: "gy", name: "gy", age: 42, weight: 60 }),
+          onUpdate: value =>
+            Promise.resolve({ ...value, name: value.name + "1" }),
+          onDelete: id => {
+            Promise.resolve(`deleted:${id}`);
+          },
+          labelField: "name",
           picker: {
             columns,
             getData,

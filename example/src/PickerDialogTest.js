@@ -1,29 +1,29 @@
-import * as React from 'react';
-import { ModalContext } from 'react-promisify-modal';
-import { Button } from 'antd';
-import { PickerDialog } from 'valor-uform-ext';
-import Mock from 'mockjs';
-import { Field } from '@uform/antd';
+import * as React from "react";
+import { ModalContext } from "react-promisify-modal";
+import { Button } from "antd";
+import { PickerDialog } from "valor-uform-ext";
+import Mock from "mockjs";
+import { Field } from "@uform/antd";
 
 const columns = [
-  { title: '姓名', dataIndex: 'name', key: 'name' },
-  { title: '年龄', dataIndex: 'age', key: 'age' },
-  { title: '体重', dataIndex: 'weight', key: 'weight' }
+  { title: "姓名", dataIndex: "name", key: "name" },
+  { title: "年龄", dataIndex: "age", key: "age" },
+  { title: "体重", dataIndex: "weight", key: "weight" }
 ];
 
 const allData = Mock.mock({
-  'array|30-100': [
+  "array|30-100": [
     {
-      id: '@increment',
-      name: '@cname',
-      age: '@integer(10,100)',
-      weight: '@integer(10,100)'
+      id: "@increment",
+      name: "@cname",
+      age: "@integer(10,100)",
+      weight: "@integer(10,100)"
     }
   ]
 }).array;
 
 const getData = ({ pageNo, pageSize, ...params }) => {
-  console.log('params', params);
+  console.log("params", params);
   return Promise.resolve(allData)
     .then(result => ({
       meta: { pageNum: 1, pageSize: 10, num: result.length },
@@ -41,8 +41,8 @@ const getData = ({ pageNo, pageSize, ...params }) => {
 
 const queryFields = (
   <React.Fragment>
-    <Field type="string" name="p1" x-props={{ placeholder: 'input p1' }} />
-    <Field type="string" name="p2" x-props={{ placeholder: 'input p2' }} />
+    <Field type="string" name="p1" x-props={{ placeholder: "input p1" }} />
+    <Field type="string" name="p2" x-props={{ placeholder: "input p2" }} />
   </React.Fragment>
 );
 
@@ -51,6 +51,14 @@ const PickerDialogPicker = () => {
   const [record, setRecord] = React.useState();
 
   const _openModal = () => {
+    const actions = {
+      onCreate: () =>
+        Promise.resolve({ id: "gy", name: "gy", age: 42, weight: 60 }),
+      onUpdate: value => Promise.resolve({ ...value, name: value.name + "1" }),
+      onDelete: id => {
+        Promise.resolve(`deleted:${id}`);
+      }
+    };
     openModal(args => (
       <PickerDialog
         {...args}
@@ -60,6 +68,7 @@ const PickerDialogPicker = () => {
         getData={getData}
         defaultQueries={{}}
         queryFields={queryFields}
+        {...actions}
       />
     )).then(result => setRecord(result));
   };

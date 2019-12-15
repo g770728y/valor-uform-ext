@@ -1,8 +1,8 @@
-import * as React from 'react';
-import * as R from 'rambda';
-import { Button } from 'antd';
-import { ModalContext, ModalProvider } from 'react-promisify-modal';
-import PickerDialog, { Props as PickerProps } from '../PickerDialog';
+import * as React from "react";
+import * as R from "rambda";
+import { Button } from "antd";
+import { ModalContext, ModalProvider } from "react-promisify-modal";
+import PickerDialog, { Props as PickerProps } from "../PickerDialog";
 
 interface Props {
   value: Identity;
@@ -16,8 +16,8 @@ interface Props {
 }
 
 const containerStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center'
+  display: "flex",
+  alignItems: "center"
 };
 
 const PickerInput_: React.FC<Props> = ({
@@ -25,17 +25,19 @@ const PickerInput_: React.FC<Props> = ({
   onChange,
   disabled,
   onCreate,
-  labelField = 'label',
+  labelField = "label",
   picker
 }) => {
   const { openModal } = React.useContext(ModalContext);
   const onPicker = () => {
     openModal!((args: any) => <PickerDialog {...args} {...picker} />).then(
-      (result: any) => onChange(result)
+      (result: any) => {
+        result && onChange(result);
+      }
     );
   };
 
-  const onNew = () => {
+  const handleCreate = () => {
     onCreate!().then(result => {
       if (result && result.id) {
         onChange(result);
@@ -43,7 +45,7 @@ const PickerInput_: React.FC<Props> = ({
     });
   };
 
-  const spacer = <div style={{ width: 10, flex: 'none' }} />;
+  const spacer = <div style={{ width: 10, flex: "none" }} />;
 
   return (
     <div style={containerStyle}>
@@ -59,11 +61,11 @@ const PickerInput_: React.FC<Props> = ({
         </>
       )}
       <Button onClick={onPicker} size="small" disabled={disabled}>
-        {value && !R.isEmpty(value) ? '重选...' : '选择...'}
+        {value && !R.isEmpty(value) ? "重选..." : "选择..."}
       </Button>
       {spacer}
       {onCreate && (
-        <Button onClick={onNew} size="small" disabled={disabled}>
+        <Button onClick={handleCreate} size="small" disabled={disabled}>
           新建
         </Button>
       )}
