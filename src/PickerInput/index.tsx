@@ -11,7 +11,6 @@ interface Props {
   // 创建方法, 创建时, 应该用openModal显示一个对话框, 最后返回一个Promise
   onCreate?: () => Promise<any>;
   labelField?: string;
-
   picker: Partial<PickerProps>;
 }
 

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Table } from 'antd';
-import { ColumnProps, TableRowSelection } from 'antd/lib/table';
+import * as React from "react";
+import { Table } from "antd";
+import { ColumnProps, TableRowSelection } from "antd/lib/table";
 
 interface Props {
   multiple?: boolean;
@@ -11,6 +11,10 @@ interface Props {
   onSubmit: (s: any[]) => void;
   meta: PageMeta;
   setCurrentPage: (pageNo: number) => void;
+  actions?: {
+    onUpdate?: (id: any) => void;
+    onDelete?: (id: any) => void;
+  };
 }
 
 const Tabler: React.FC<Props> = ({
@@ -21,10 +25,43 @@ const Tabler: React.FC<Props> = ({
   setSelection,
   onSubmit,
   meta,
-  setCurrentPage
+  setCurrentPage,
+  actions
 }) => {
+  const actionColumn =
+    actions && (actions.onDelete || actions.onUpdate)
+      ? {
+          title: "操作",
+          dataIndex: "name",
+          key: "action",
+          width: 100,
+          render: (s: string, item: Identity) => {
+            return (
+              <>
+                {actions.onUpdate && (
+                  <a
+                    onClick={() => actions.onUpdate!(item.id)}
+                    style={{ marginRight: 10 }}
+                  >
+                    修改
+                  </a>
+                )}
+                {actions.onDelete && (
+                  <a
+                    onClick={() => actions.onDelete!(item.id)}
+                    style={{ marginRight: 10 }}
+                  >
+                    删除
+                  </a>
+                )}
+              </>
+            );
+          }
+        }
+      : null;
+
   const rowSelection: TableRowSelection<any> = {
-    type: multiple ? 'checkbox' : 'radio',
+    type: multiple ? "checkbox" : "radio",
     selectedRowKeys: selection.map(it => it.id),
     onChange: (ids, rows) => {
       setSelection(rows.map(it => ({ ...it })));
@@ -54,6 +91,7 @@ const Tabler: React.FC<Props> = ({
         appendToSelection(row);
       },
       onDoubleClick: () => {
+        if (actions && (actions.onDelete || actions.onUpdate)) return;
         const newSelection = appendToSelection(row);
         onSubmit(newSelection);
       }
@@ -64,10 +102,10 @@ const Tabler: React.FC<Props> = ({
   return (
     <Table
       className="pollute"
-      size={'small'}
+      size={"small"}
       onRow={onRowClick}
-      rowKey={'id'}
-      columns={columns}
+      rowKey={"id"}
+      columns={actionColumn ? [...columns, actionColumn] : columns}
       dataSource={dataSource}
       rowSelection={rowSelection}
       pagination={pagination}

@@ -52,11 +52,19 @@ const PickerDialogPicker = () => {
 
   const _openModal = () => {
     const actions = {
-      onCreate: () =>
-        Promise.resolve({ id: "gy", name: "gy", age: 42, weight: 60 }),
-      onUpdate: value => Promise.resolve({ ...value, name: value.name + "1" }),
+      onCreate: () => {
+        allData.shift({ id: "gy", name: "gy", age: 42, weight: 60 });
+        return Promise.resolve();
+      },
+      onUpdate: id => {
+        const index = allData.findIndex(data => id === data.id);
+        allData[index].age = allData[index].age + 10;
+        return Promise.resolve();
+      },
       onDelete: id => {
-        Promise.resolve(`deleted:${id}`);
+        const index = allData.findIndex(data => id === data.id);
+        allData.splice(index, index + 1);
+        return Promise.resolve();
       }
     };
     openModal(args => (
@@ -68,7 +76,7 @@ const PickerDialogPicker = () => {
         getData={getData}
         defaultQueries={{}}
         queryFields={queryFields}
-        {...actions}
+        actions={actions}
       />
     )).then(result => setRecord(result));
   };
