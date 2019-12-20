@@ -8,7 +8,7 @@ import { appCache, AppCache } from "valor-app-utils";
 
 export interface IPickerDialogActions {
   onCreate?: () => Promise<any>;
-  onUpdate?: (id: any) => Promise<any>;
+  onUpdate?: (id: any, record: any) => Promise<any>;
   onDelete?: (id: any) => Promise<any>;
 }
 
@@ -150,7 +150,9 @@ const PickerDialog: React.FC<Props> = ({
   const handleUpdate =
     actions && actions.onUpdate
       ? (id: any) => {
-          actions.onUpdate!(id).then(refetch);
+          actions.onUpdate!(id, dataSource.find(it => it.id === id)!).then(
+            refetch
+          );
         }
       : undefined;
 
