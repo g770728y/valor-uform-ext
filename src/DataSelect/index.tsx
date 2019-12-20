@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as R from 'rambda';
-import { Button, Select } from 'antd';
-import { SelectProps } from 'antd/lib/select';
+import * as React from "react";
+import * as R from "rambda";
+import { Button, Select } from "antd";
+import { SelectProps } from "antd/lib/select";
 
 interface Props extends SelectProps<any> {
   // 创建方法, 创建时, 应该用openModal显示一个对话框, 最后返回一个Promise
@@ -16,8 +16,8 @@ const { Option } = Select;
 
 const DataSelect: React.FC<Props> = ({
   disabled,
-  idField = 'id',
-  labelField = 'label',
+  idField = "id",
+  labelField = "label",
   data,
   getData,
   ...selectProps
@@ -42,7 +42,16 @@ const DataSelect: React.FC<Props> = ({
   }, []);
 
   return (
-    <Select {...selectProps}>
+    <Select
+      showSearch
+      filterOption={(input, options) => {
+        return (
+          !!options.props.children &&
+          (options.props.children + "").indexOf(input) >= 0
+        );
+      }}
+      {...selectProps}
+    >
       {dataSource!.map(it => (
         <Option key={it[idField]} value={it[idField]}>
           {it[labelField]}
