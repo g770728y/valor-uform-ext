@@ -751,64 +751,65 @@
   dependencies:
     "@types/estree" "*"
 
-"@uform/antd@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/antd/-/antd-0.3.6.tgz#00d12a2da2dfb06731a60933bce86052947396c7"
-  integrity sha512-8qOgozfWoYviZL4Ze2ZMLsqgFfoUgcNVjcPx5+qD7Ucbwz6M9QiNdWmWI3tJnnxfpyNHDAi6zPopVq+ukGce/g==
+"@uform/antd@^0.4.0":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/antd/-/antd-0.4.4.tgz#d1f0389649edc3826b66d88a84351923a7b7c279"
+  integrity sha512-niSA9b8HjZDEYIe2utvn+ijQ122Dr7nbeW9FWaHOE+4i1HYjh2A4Kv0Qmcn4NDOMMI5uCKl8AAEns07yE2KX2Q==
   dependencies:
-    "@uform/react" "^0.3.6"
-    "@uform/utils" "^0.3.6"
+    "@uform/react" "^0.4.4"
+    "@uform/types" "^0.4.4"
+    "@uform/utils" "^0.4.4"
     classnames "^2.2.6"
     moveto "^1.7.4"
     react-stikky "^0.1.15"
     styled-components "^4.1.1"
 
-"@uform/core@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/core/-/core-0.3.6.tgz#a7a656add9397d30a3607403fccd3dd4e29af01b"
-  integrity sha512-/zk6XhVy7GkfvaSPge45fH2gShJKbsHb2fB8WrjYqLcHMYEGkk15bx1AfrcvB9HSId1QksjpphWcfnfR1gLjrA==
+"@uform/core@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/core/-/core-0.4.4.tgz#4f734701c77d72a66bce503b0aa1834214e2612d"
+  integrity sha512-hVc1vwh5nXTHZT/knd0amxX7LaDkUDXyBz4ih3nWKtQneAZhgKwopAcIWyPtsonnU4+6aLG9Crp6WK3CDW5XLA==
   dependencies:
-    "@uform/types" "^0.3.6"
-    "@uform/utils" "^0.3.6"
-    "@uform/validator" "^0.3.6"
+    "@uform/types" "^0.4.4"
+    "@uform/utils" "^0.4.4"
+    "@uform/validator" "^0.4.4"
     dot-match "^0.1.18"
     rxjs "^6.3.3"
 
-"@uform/react@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/react/-/react-0.3.6.tgz#82acfdf79fbc6beab370239ba0ea427f8902479e"
-  integrity sha512-jFO4QknpA5pPAUi//orpV563foZOSkZkE5GG80iEEnWs5pghCXAiKm3VTDIx9e6bngyvCSCkIcwKZXq9iNl7oA==
+"@uform/react@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/react/-/react-0.4.4.tgz#6fd1bf1b64976f1b5b51287a28bd17a748c62eab"
+  integrity sha512-dZU5RO6H11BISopkti/Nk4hVIOEzsGH4yTAJ8a/5EVEpjROS3mc8aDPLPfm5jSCvEZbd2FSFt/SdoF9rH3G+Hw==
   dependencies:
-    "@uform/core" "^0.3.6"
-    "@uform/types" "^0.3.6"
-    "@uform/utils" "^0.3.6"
-    "@uform/validator" "^0.3.6"
+    "@uform/core" "^0.4.4"
+    "@uform/types" "^0.4.4"
+    "@uform/utils" "^0.4.4"
+    "@uform/validator" "^0.4.4"
     pascal-case "^2.0.1"
     react-eva "^1.0.0"
     rxjs-compat "^6.5.1"
 
-"@uform/types@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/types/-/types-0.3.6.tgz#eeec6e1d5b39a5e8dcdf8215dc38ca429c3741fa"
-  integrity sha512-2LL1do0TzbNvMvDMR0guz4B+hFHBl6ImHSX5ULuSLA9sE7w/I4iQMJ7V8y52grKT77PNYHfHNn6LJN2oycQXEQ==
+"@uform/types@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/types/-/types-0.4.4.tgz#e23b735cee1716fda44e5cc8ced03b453f00ccfa"
+  integrity sha512-AKMcM5oIGp9stuFGp2MbvNiKgBBpOGi/Pe9Yd1jkiCOOfPkJEoUyhv8hVT3xr0onZ2MDUMkNhAPhcufPTuOxUg==
   dependencies:
     rxjs "^6.3.3"
 
-"@uform/utils@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/utils/-/utils-0.3.6.tgz#b86edf9516ed8972d6ec3ebb9ce47f4e2fde1b21"
-  integrity sha512-z6ydWm1Vah8yzLyx+k+fcOscNOvOPc8/KK4Fxy7KzmBYF+DzMzApkY91EbMZvp0TFByajFNSU8ulHGreUjptuA==
+"@uform/utils@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/utils/-/utils-0.4.4.tgz#0daed417dddc6c8fdfb15f60c1905f92fc1551cd"
+  integrity sha512-3XmicLZTwBVHdCX3ngDL8uoACSPQhqS+SF/998N07rQt2izmvz9F5ShmADeWjdrzDK4iWzrtvUQ7CSzI9tZ9yg==
   dependencies:
-    "@uform/types" "^0.3.6"
+    "@uform/types" "^0.4.4"
     camel-case "^3.0.0"
 
-"@uform/validator@^0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@uform/validator/-/validator-0.3.6.tgz#60b9a2ead2480378951bc5d8ca794d43c83e98fe"
-  integrity sha512-Monq+AteBF1+g5lNglm1h8nbrzop5HM0KXcpoFyB2MXAvGHy7eCrSqrppe+43kj18QnCIeWkr6K80wZbKM0utg==
+"@uform/validator@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@uform/validator/-/validator-0.4.4.tgz#4a0ebc95a05ff3364fb3fb873545a9efa1febe89"
+  integrity sha512-8fhlLcr+r9KKisHrpB6fPYfr1J8wyhpaVzQMvHFQKWg7NLSlHH9lfqTdM8W+9iuUm8Ro3W7XApI0JCg3+8jfWw==
   dependencies:
-    "@uform/types" "^0.3.6"
-    "@uform/utils" "^0.3.6"
+    "@uform/types" "^0.4.4"
+    "@uform/utils" "^0.4.4"
 
 abab@^2.0.0:
   version "2.0.0"
@@ -860,11 +861,6 @@ add-dom-event-listener@^1.1.0:
   integrity sha512-WCxx1ixHT0GQU9hb0KI/mhgRQhnU+U3GvwY6ZvVjYq8rsihIGoaIOUbY0yMPBxLH5MDtr0kz3fisWGNcbWW7Jw==
   dependencies:
     object-assign "4.x"
-
-add@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
-  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 address@1.0.3:
   version "1.0.3"
@@ -2503,6 +2499,11 @@ commander@~2.13.0:
 commander@~2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
+
+commander@~2.20.3:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -4247,8 +4248,9 @@ handle-thing@^1.2.5:
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
 
 handlebars@^4.0.3:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.5.3.tgz#5cf75bd8714f7605713511a56be7c349becb0482"
+  integrity sha512-3yPecJoJHK/4c6aZhSvxOyG4vJKDshV36VHp0iVCDVh7o9w2vwi3NSnL2MMPj3YdduqaBcu7cGbggJQM0br9xA==
   dependencies:
     neo-async "^2.6.0"
     optimist "^0.6.1"
@@ -5985,6 +5987,7 @@ minimist@^1.1.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
 minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+  integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
 minipass@^2.2.1, minipass@^2.3.5:
   version "2.3.5"
@@ -6411,6 +6414,7 @@ opn@^5.1.0:
 optimist@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
+  integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
   dependencies:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
@@ -8643,6 +8647,7 @@ source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, sour
 source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
 sourcemap-codec@^1.4.4:
   version "1.4.6"
@@ -9328,11 +9333,19 @@ uglify-js@^2.8.29:
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
 
-uglify-js@^3.0.13, uglify-js@^3.1.4:
+uglify-js@^3.0.13:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.0.tgz#704681345c53a8b2079fb6cec294b05ead242ff5"
   dependencies:
     commander "~2.20.0"
+    source-map "~0.6.1"
+
+uglify-js@^3.1.4:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.3.tgz#f918fce9182f466d5140f24bb0ff35c2d32dcc6a"
+  integrity sha512-7tINm46/3puUA4hCkKYo4Xdts+JDaVC9ZPRcG8Xw9R4nhO/gZgUM3TENq8IF4Vatk8qCig4MzP/c8G4u2BkVQg==
+  dependencies:
+    commander "~2.20.3"
     source-map "~0.6.1"
 
 uglify-to-browserify@~1.0.0:
@@ -9559,10 +9572,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-valor-app-utils@^1.0.0:
-  version "1.0.35"
-  resolved "https://registry.yarnpkg.com/valor-app-utils/-/valor-app-utils-1.0.35.tgz#8b240ddfd96f87cdd9c78262b1dc33869936908a"
-  integrity sha512-jmnen7VvteOziircA+R1AsN3e2Z0gMOEtLNBEAImdp8gSF2YgkOrymIJl3n7ZpARqNmXAhHD1usDSnx8r5Xvcg==
+valor-app-utils@^1.0.3:
+  version "1.0.63"
+  resolved "https://registry.yarnpkg.com/valor-app-utils/-/valor-app-utils-1.0.63.tgz#d2818f77cd907b81ebca6e7b59d60c167df5f892"
+  integrity sha512-hcqEDmqzNL5ity0//z2jTtZGcc4KF/g4Xj2pTlcMgAHdhuZG02HM8aaxPQ0atkp44AQ0UScjxzQeeF5EI8qA5g==
 
 vary@~1.1.2:
   version "1.1.2"
@@ -9819,6 +9832,7 @@ wordwrap@0.0.2:
 wordwrap@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+  integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
 wordwrap@~1.0.0:
   version "1.0.0"
@@ -9972,8 +9986,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
-
-yarn@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.19.1.tgz#14b92410dd1ba5bab87a12b4a3d807f4569bea97"
-  integrity sha512-gBnfbL9rYY05Gt0cjJhs/siqQXHYlZalTjK3nXn2QO20xbkIFPob+LlH44ML47GcR4VU9/2dYck1BWFM0Javxw==
