@@ -24,7 +24,7 @@
   "dependencies": {},
   "peerDependencies": {
     "@uform/antd": "^0.4.0",
-    "antd": "^3.20.7",
+    "antd": "^3.19.5",
     "codemirror": "^5.49.2",
     "rambda": "^4.4.0",
     "rambdax": "^3.5.0",
@@ -43,7 +43,7 @@
     "@uform/antd": "^0.4.0",
     "codemirror": "^5.49.2",
     "react-codemirror2": "^6.0.0",
-    "antd": "^3.20.7",
+    "antd": "^3.19.5",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
