@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import TreeSelectTest from './TreeSelectTest';
-import AppendableSelectTest from './AppendableSelectTest';
-import { ModalProvider } from 'react-promisify-modal';
-import PickerDialogTest from './PickerDialogTest';
-import PickerInputTest from './PickerInputTest';
-import CodeInputTest from './CodeInput';
-import DataSelectTest from './DataSelectTest';
+import React, { Component } from "react";
+import TreeSelectTest from "./TreeSelectTest";
+import AppendableSelectTest from "./AppendableSelectTest";
+import { ModalProvider } from "react-promisify-modal";
+import PickerDialogTest from "./PickerDialogTest";
+import PickerInputTest from "./PickerInputTest";
+import CodeInputTest from "./CodeInput";
+import DataSelectTest from "./DataSelectTest";
+import NumberRangeTest from "./NumberRangeTest";
 
 export default () => {
   return (
@@ -28,6 +29,9 @@ export default () => {
         <hr />
         <h1>CodeInput</h1>
         <CodeInputTest />
+        <hr />
+        <h1>NumberRange</h1>
+        <NumberRangeTest />
       </div>
     </ModalProvider>
   );

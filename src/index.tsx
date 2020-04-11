@@ -1,40 +1,48 @@
-import * as React from 'react';
-import { connect, registerFormField } from '@uform/antd';
+import * as React from "react";
+import { connect, registerFormField } from "@uform/antd";
 
-import TreeSelectInput from './TreeSelectInput';
+import TreeSelectInput from "./TreeSelectInput";
 export { TreeSelectInput };
 
-import AppendableSelect from './AppendableSelect';
+import AppendableSelect from "./AppendableSelect";
 export { AppendableSelect };
 
-import PickerDialog from './PickerDialog';
+import PickerDialog from "./PickerDialog";
 export { PickerDialog };
 
-import PickerInput from './PickerInput';
+import PickerInput from "./PickerInput";
 export { PickerInput };
 
-import CodeInput from './CodeInput';
+import CodeInput from "./CodeInput";
 export { CodeInput };
 
-import DataSelect from './DataSelect';
+import DataSelect from "./DataSelect";
 export { DataSelect };
 
+import NumberRangeInput from "./NumberRangeInput";
+export { NumberRangeInput };
+
 registerFormField(
-  'code-input',
+  "code-input",
   (connect() as any)((props: any) => <CodeInput {...props} />)
 );
 
 registerFormField(
-  'tree-select',
+  "tree-select",
   (connect() as any)((props: any) => <TreeSelectInput {...props} />)
 );
 
 registerFormField(
-  'picker-input',
+  "picker-input",
   (connect() as any)((props: any) => <PickerInput {...props} />)
 );
 
 registerFormField(
-  'data-select',
+  "data-select",
   (connect() as any)((props: any) => <DataSelect {...props} />)
+);
+
+registerFormField(
+  "number-range",
+  (connect() as any)((props: any) => <NumberRangeInput {...props} />)
 );
