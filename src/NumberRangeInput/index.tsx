@@ -34,7 +34,17 @@ const NumberRangeInput: React.FC<Props> = ({
           onChange={v => handleChange(0, v)}
         />
       </Col>
-      <Col span={2}>至</Col>
+      <Col
+        span={2}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: 30
+        }}
+      >
+        -
+      </Col>
       <Col span={11}>
         <InputNumber
           disabled={disabled}
