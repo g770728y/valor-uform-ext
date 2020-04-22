@@ -91,7 +91,8 @@ const Tabler: React.FC<Props> = ({
         appendToSelection(row);
       },
       onDoubleClick: () => {
-        if (actions && (actions.onDelete || actions.onUpdate)) return;
+        // 本来是准备 用途为编辑器 而非选择器时, 不要双击, 但貌似不太方便
+        // if (actions && (actions.onDelete || actions.onUpdate)) return;
         const newSelection = appendToSelection(row);
         onSubmit(newSelection);
       }
