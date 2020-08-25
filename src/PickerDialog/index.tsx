@@ -177,7 +177,12 @@ const PickerDialog: React.FC<Props> = ({
         <Query
           queryFields={queryFields}
           queries={queries}
-          setQueries={(q: any) => patchModel({ queries: q })}
+          setQueries={(q: any) =>
+            patchModel({
+              queries: q,
+              meta: { ...modelRef.current.meta, pageNo: 1 }
+            })
+          }
         />
       )}
       {handleCreate && (

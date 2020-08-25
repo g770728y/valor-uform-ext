@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SchemaForm, Submit } from '@uform/antd';
+import * as React from "react";
+import { SchemaForm, Submit } from "@uform/antd";
 
 interface Props {
   queryFields: React.ReactChild[];
@@ -10,7 +10,7 @@ interface Props {
 const Query: React.FC<Props> = ({ queries, queryFields, setQueries }) => {
   return (
     <SchemaForm
-      layout={'inline'}
+      layout={"inline"}
       defaultValue={queries || {}}
       onSubmit={(values: any) => setQueries({ ...queries, ...values })}
     >
