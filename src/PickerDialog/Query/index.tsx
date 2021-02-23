@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SchemaForm, Submit } from "@uform/antd";
+import { SchemaForm, Submit } from "@formily/antd";
 
 interface Props {
   queryFields: React.ReactChild[];

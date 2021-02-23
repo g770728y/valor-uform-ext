@@ -1,6 +1,11 @@
 import * as React from "react";
 import Mock from "mockjs";
-import SchemaForm, { connect, registerFormField, Field } from "@uform/antd";
+import SchemaForm, {
+  connect,
+  registerFormField,
+  Field,
+  Submit
+} from "@formily/antd";
 import { NumberRangeInput } from "valor-uform-ext";
 
 registerFormField(
@@ -16,6 +21,7 @@ const NumberRangeTest = () => {
       layout={"horizontal"}
     >
       <Field name="nr" title="数值范围" x-component="number-range" />
+      <Submit />
     </SchemaForm>
   );
 };

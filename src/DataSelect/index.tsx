@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as R from "rambda";
 import { Button, Select } from "antd";
 import { SelectProps } from "antd/lib/select";
 
@@ -7,6 +6,8 @@ interface Props extends SelectProps<any> {
   // 创建方法, 创建时, 应该用openModal显示一个对话框, 最后返回一个Promise
   idField?: string;
   labelField?: string;
+  // 如果允许搜索, 那么则支持输入
+  searchable?: boolean;
 
   data?: Identity[];
   // 不需要返回分页数据
@@ -20,6 +21,7 @@ const DataSelect: React.FC<Props> = ({
   labelField = "label",
   data,
   getData,
+  searchable = false,
   ...selectProps
 }) => {
   const unmountedRef = React.useRef<boolean>(false);
@@ -43,13 +45,12 @@ const DataSelect: React.FC<Props> = ({
 
   return (
     <Select
-      showSearch
-      filterOption={(input, options) => {
+      showSearch={!!searchable}
+      filterOption={searchable ? (input, options) => {
         return (
-          !!options.props.children &&
-          (options.props.children + "").indexOf(input) >= 0
+          (options?.value + "").indexOf(input) >= 0
         );
-      }}
+      } : undefined}
       {...selectProps}
     >
       {dataSource!.map(it => (

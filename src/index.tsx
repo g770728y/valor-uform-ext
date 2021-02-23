@@ -1,5 +1,5 @@
 import * as React from "react";
-import { connect, registerFormField } from "@uform/antd";
+import { connect, registerFormField } from "@formily/antd";
 
 import TreeSelectInput from "./TreeSelectInput";
 export { TreeSelectInput };

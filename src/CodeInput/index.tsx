@@ -1,16 +1,15 @@
-import * as React from 'react';
-import { Button, Modal, Alert } from 'antd';
-import { UnControlled as CodeMirror } from 'react-codemirror2';
-import 'codemirror/addon/edit/closebrackets';
-import 'codemirror/addon/edit/closetag';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/htmlmixed/htmlmixed';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/css/css';
-import Text from 'antd/lib/typography/Text';
+import * as React from "react";
+import { Button, Modal, Alert } from "antd";
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/edit/closetag";
+import "codemirror/lib/codemirror.css";
+import "codemirror/mode/htmlmixed/htmlmixed";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/css/css";
 
 interface Props {
-  mode: 'text/html' | 'javascript' | 'css';
+  mode: "text/html" | "javascript" | "css";
   value: string;
   onChange: (code: string) => void;
   disabled?: boolean;
@@ -31,19 +30,19 @@ const CodeInput: React.FC<Props> = ({
     <>
       <Button
         onClick={() => setVisible(true)}
-        size={'small'}
+        size={"small"}
         disabled={disabled}
       >
-        {'编辑'}
+        {"编辑"}
       </Button>
       <style
         dangerouslySetInnerHTML={{
           __html:
-            '.react-codemirror2 {height:100%;flex:0 1 auto;} .CodeMirror {height:100%;}'
+            ".react-codemirror2 {height:100%;flex:0 1 auto;} .CodeMirror {height:100%;}"
         }}
       ></style>
       <Modal
-        title={'编辑源代码'}
+        title={"编辑源代码"}
         visible={visible}
         onCancel={() => setVisible(false)}
         onOk={() => {
@@ -58,17 +57,17 @@ const CodeInput: React.FC<Props> = ({
       >
         <div
           style={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column'
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column"
           }}
         >
           {remark && <Alert type="warning" message={remark} />}
           <CodeMirror
             options={{
               mode: mode,
-              theme: 'default',
+              theme: "default",
               lineNumbers: true,
               autoCloseBrackets: true,
               autoCloseTags: true

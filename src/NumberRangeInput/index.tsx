@@ -20,8 +20,8 @@ const NumberRangeInput: React.FC<Props> = ({
   const handleChange = React.useCallback(
     (i: number, v: number = 0) => {
       const _range = R.update(i, v, range);
-      setRange(_range);
-      onChange(_range);
+      setRange(_range as any);
+      onChange(_range as any);
     },
     [range]
   );
@@ -31,7 +31,7 @@ const NumberRangeInput: React.FC<Props> = ({
         <InputNumber
           disabled={disabled}
           value={range[0]}
-          onChange={v => handleChange(0, v)}
+          onChange={v => handleChange(0, v as any)}
         />
       </Col>
       <Col
@@ -49,7 +49,7 @@ const NumberRangeInput: React.FC<Props> = ({
         <InputNumber
           disabled={disabled}
           value={range[1]}
-          onChange={v => handleChange(1, v)}
+          onChange={v => handleChange(1, v as any)}
         />
       </Col>
     </Row>

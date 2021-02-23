@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Modal, Button, Icon } from "antd";
+import { Modal, Button } from "antd";
 import Tabler from "./Tabler";
 import { ColumnProps } from "antd/lib/table";
 import * as R from "rambda";
 import Query from "./Query";
 import { appCache, AppCache } from "valor-app-utils";
+import { PlusOutlined } from "@ant-design/icons";
 
 export interface IPickerDialogActions {
   onCreate?: () => Promise<any>;
@@ -188,7 +189,7 @@ const PickerDialog: React.FC<Props> = ({
       {handleCreate && (
         <div>
           <Button onClick={handleCreate!} type="link">
-            <Icon type="plus" />
+            <PlusOutlined />
             新建
           </Button>
         </div>

@@ -5,7 +5,7 @@ import SchemaForm, {
   Submit,
   registerFormField,
   connect
-} from "@uform/antd";
+} from "@formily/antd";
 import { PickerInput } from "valor-uform-ext";
 
 registerFormField(
@@ -32,19 +32,18 @@ const allData = Mock.mock({
 
 const getData = ({ pageNo, pageSize, ...params }) => {
   console.log("params", params);
-  return Promise.resolve(allData)
-    .then(result => ({
-      meta: { pageNum: 1, pageSize: 10, num: result.length },
-      entities: result.slice((pageNo - 1) * pageSize, pageNo * pageSize)
-    }))
-    .then(result => ({
-      ...result,
-      meta: {
-        pageNo: result.meta.pageNum,
-        pageSize: result.meta.pageSize,
-        total: result.meta.num
-      }
-    }));
+  return Promise.resolve(allData).then(result => ({
+    meta: { pageNum: 1, pageSize: 10, num: result.length },
+    entities: result.slice((pageNo - 1) * pageSize, pageNo * pageSize)
+  }));
+  // .then(result => ({
+  //   ...result,
+  //   meta: {
+  //     pageNo: result.meta.pageNum,
+  //     pageSize: result.meta.pageSize,
+  //     total: result.meta.num
+  //   }
+  // }));
 };
 
 const queryFields = (

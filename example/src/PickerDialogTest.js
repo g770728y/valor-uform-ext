@@ -3,7 +3,7 @@ import { ModalContext } from "react-promisify-modal";
 import { Button } from "antd";
 import { PickerDialog } from "valor-uform-ext";
 import Mock from "mockjs";
-import { Field } from "@uform/antd";
+import { Field } from "@formily/antd";
 
 const columns = [
   { title: "姓名", dataIndex: "name", key: "name" },

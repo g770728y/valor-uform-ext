@@ -5,7 +5,7 @@ import SchemaForm, {
   Submit,
   registerFormField,
   connect
-} from "@uform/antd";
+} from "@formily/antd";
 import { DataSelect } from "valor-uform-ext";
 
 registerFormField("data-select", connect()(props => <DataSelect {...props} />));
