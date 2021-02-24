@@ -20,6 +20,7 @@ import DataSelect from "./DataSelect";
 export { DataSelect };
 
 import NumberRangeInput from "./NumberRangeInput";
+import MobileInput from "./MobileInput";
 export { NumberRangeInput };
 
 registerFormField(
@@ -45,4 +46,9 @@ registerFormField(
 registerFormField(
   "number-range",
   (connect() as any)((props: any) => <NumberRangeInput {...props} />)
+);
+
+registerFormField(
+  "mobile-input",
+  (connect() as any)((props: any) => <MobileInput {...props} />)
 );

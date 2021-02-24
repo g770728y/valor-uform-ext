@@ -4409,6 +4409,11 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
+imask@^6.0.7:
+  version "6.0.7"
+  resolved "https://registry.npm.taobao.org/imask/download/imask-6.0.7.tgz#20a626a80e277231d7d5c27cf45d816c035b748e"
+  integrity sha1-IKYmqA4ncjHX1cJ89F2BbANbdI4=
+
 immer@^6.0.3:
   version "6.0.9"
   resolved "https://registry.npm.taobao.org/immer/download/immer-6.0.9.tgz?cache=0&sync_timestamp=1611143233118&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fimmer%2Fdownload%2Fimmer-6.0.9.tgz#b9dd69b8e69b3a12391e87db1e3ff535d1b26485"
@@ -6850,7 +6855,7 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.8, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -7405,6 +7410,14 @@ react-eva@^1.0.0-alpha.0:
   dependencies:
     rxjs "^6.3.3"
     rxjs-compat "^6.6.3"
+
+react-imask@^6.0.7:
+  version "6.0.7"
+  resolved "https://registry.npm.taobao.org/react-imask/download/react-imask-6.0.7.tgz#75560735607fc79b9065c1d6b25ce676c5e6c94e"
+  integrity sha1-dVYHNWB/x5uQZcHWslzmdsXmyU4=
+  dependencies:
+    imask "^6.0.7"
+    prop-types "^15.7.2"
 
 react-is@^16.12.0:
   version "16.13.1"

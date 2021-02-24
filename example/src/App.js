@@ -7,6 +7,7 @@ import PickerInputTest from "./PickerInputTest";
 import CodeInputTest from "./CodeInput";
 import DataSelectTest from "./DataSelectTest";
 import NumberRangeTest from "./NumberRangeTest";
+import MobileTest from "./MobileTest";
 import { setup } from "@formily/antd-components";
 
 // 注册formily组件
@@ -36,6 +37,10 @@ export default () => {
         <hr />
         <h1>NumberRange</h1>
         <NumberRangeTest />
+        <hr />
+        <h1>MobileTest</h1>
+        <MobileTest />
+        <hr />
       </div>
     </ModalProvider>
   );
