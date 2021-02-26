@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Row, Col, InputNumber } from "antd";
-import * as R from "rambda";
+import * as R from "rambdax";
 import { padding } from "valor-app-utils";
 
 interface Props {

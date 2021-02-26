@@ -2,7 +2,7 @@ import * as React from "react";
 import { Modal, Button } from "antd";
 import Tabler from "./Tabler";
 import { ColumnProps } from "antd/lib/table";
-import * as R from "rambda";
+import * as R from "rambdax";
 import Query from "./Query";
 import { appCache, AppCache } from "valor-app-utils";
 import { PlusOutlined } from "@ant-design/icons";

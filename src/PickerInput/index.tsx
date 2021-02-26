@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as R from "rambda";
+import * as R from "rambdax";
 import { Button } from "antd";
 import { ModalContext, ModalProvider } from "react-promisify-modal";
 import PickerDialog, { Props as PickerProps } from "../PickerDialog";

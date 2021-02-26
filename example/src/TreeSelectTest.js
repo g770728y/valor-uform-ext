@@ -8,7 +8,7 @@ import {
   connect
 } from "@formily/antd";
 import "antd/dist/antd.css";
-import * as R from "rambda";
+import * as R from "rambdax";
 
 registerFormField(
   "tree-select",
