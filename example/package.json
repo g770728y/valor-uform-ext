@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@types/codemirror": "^0.0.79",
-    "codemirror": "^5.49.2",
+    "codemirror": "^5.58.2",
     "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.2",
     "rambdax": "^7.2.0",
