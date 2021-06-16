@@ -13,20 +13,12 @@ export { PickerDialog };
 import PickerInput from "./PickerInput";
 export { PickerInput };
 
-import CodeInput from "./CodeInput";
-export { CodeInput };
-
 import DataSelect from "./DataSelect";
 export { DataSelect };
 
 import NumberRangeInput from "./NumberRangeInput";
 import MaskInput from "./MaskInput";
 export { NumberRangeInput };
-
-registerFormField(
-  "code-input",
-  (connect() as any)((props: any) => <CodeInput {...props} />)
-);
 
 registerFormField(
   "tree-select",

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Select } from "antd";
-import { SelectProps } from "antd/lib/select";
+import { SelectProps } from "antd/es/select";
 
 interface Props extends SelectProps<any> {
   // 创建方法, 创建时, 应该用openModal显示一个对话框, 最后返回一个Promise

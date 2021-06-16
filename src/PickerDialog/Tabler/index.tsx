@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Table } from "antd";
-import { ColumnProps } from "antd/lib/table";
-import { TableRowSelection } from "antd/lib/table/interface";
+import { ColumnProps } from "antd/es/table";
+import { TableRowSelection } from "antd/es/table/interface";
 
 interface Props {
   multiple?: boolean;
